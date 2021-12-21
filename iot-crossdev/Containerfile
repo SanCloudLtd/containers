@@ -1,0 +1,13 @@
+# Copyright (C) 2021 SanCloud Ltd
+# SPDX-License-Identifier: Apache-2.0
+
+FROM ghcr.io/sancloudltd/iot-dev
+
+USER root
+RUN cd /opt && \
+    wget 'https://toolchains.bootlin.com/downloads/releases/toolchains/armv7-eabihf/tarballs/armv7-eabihf--glibc--stable-2020.08-1.tar.bz2' \
+        -O toolchain.tar.bz2 && \
+    tar xf toolchain.tar.bz2 && \
+    rm -f toolchain.tar.bz2
+
+COPY setenv /opt/armv7-eabihf--glibc--stable-2020.08-1/setenv
