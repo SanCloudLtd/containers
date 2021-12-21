@@ -6,5 +6,6 @@ FROM docker.io/library/ubuntu:20.04
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
         build-essential cmake ninja-build mosquitto libmosquitto-dev \
-        libjson-c-dev && \
+        libjson-c-dev device-tree-compiler bison flex wget libssl-dev \
+        libgmp3-dev libmpc-dev bc && \
     apt-get clean
