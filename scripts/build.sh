@@ -15,4 +15,9 @@ if [[ ! -d "$1" ]]; then
 fi
 
 cd $1
+if [[ -e pull ]]; then
+    while read img; do
+        podman pull $img
+    done < pull
+fi
 podman build -t ghcr.io/sancloudltd/$1 .
