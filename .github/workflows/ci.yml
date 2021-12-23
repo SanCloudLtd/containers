@@ -12,7 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        image: ['iot-dev', 'poky-build']
+        include:
+          - image: iot-dev
+            description: IoT development environment
+          - image: poky-build
+            description: Yocto Project build environment for Poky distro
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -22,6 +26,9 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ghcr.io/sancloudltd/${{ matrix.image }}
+          labels: |
+            org.opencontainers.image.title=${{ matrix.image }}
+            org.opencontainers.image.description=${{ matrix.description }}
 
       - name: Login to GHCR
         uses: docker/login-action@v1
@@ -44,7 +51,11 @@ jobs:
     needs: base-images
     strategy:
       matrix:
-        image: ['iot-crossdev', 'arago-build']
+        include:
+          - image: iot-crossdev
+            description: IoT development environment with cross-compilation toolchain
+          - image: arago-build
+            description: Yocto Project build environment for Arago distro
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -54,6 +65,9 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ghcr.io/sancloudltd/${{ matrix.image }}
+          labels: |
+            org.opencontainers.image.title=${{ matrix.image }}
+            org.opencontainers.image.description=${{ matrix.description }}
 
       - name: Login to GHCR
         uses: docker/login-action@v1
