@@ -1,7 +1,7 @@
 # Copyright (C) 2021 SanCloud Ltd
 # SPDX-License-Identifier: Apache-2.0
 
-FROM ghcr.io/sancloudltd/poky-build
+FROM ghcr.io/sancloudltd/poky-build:dev
 
 USER root
 RUN cd /opt && \

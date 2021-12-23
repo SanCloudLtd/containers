@@ -20,4 +20,4 @@ if [[ -e pull ]]; then
         podman pull $img
     done < pull
 fi
-podman build -t ghcr.io/sancloudltd/$1 .
+podman build -t ghcr.io/sancloudltd/$1:dev .
