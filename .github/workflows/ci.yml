@@ -37,6 +37,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Run pre-build script
+        run: if [ -e prebuild.sh ]; then NOPULL=1 ./prebuild.sh; fi
+        working-directory: ${{ matrix.image }}
+
       - name: Build and publish
         uses: docker/build-push-action@v2
         with:
@@ -75,6 +79,10 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run pre-build script
+        run: if [ -e prebuild.sh ]; then NOPULL=1 ./prebuild.sh; fi
+        working-directory: ${{ matrix.image }}
 
       - name: Build and publish
         uses: docker/build-push-action@v2
