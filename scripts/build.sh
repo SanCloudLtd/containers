@@ -14,8 +14,8 @@ if [[ ! -d "$1" ]]; then
     exit 1
 fi
 
-cd $1
+cd "$1"
 if [[ -e prebuild.sh ]]; then
     ./prebuild.sh
 fi
-podman build -t ghcr.io/sancloudltd/$1:dev .
+podman build -t "ghcr.io/sancloudltd/$1:dev" .

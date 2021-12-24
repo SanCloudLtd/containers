@@ -1,0 +1,26 @@
+# Copyright (C) 2021 SanCloud Ltd
+# SPDX-License-Identifier: Apache-2.0
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+    -   id: check-added-large-files
+    -   id: check-case-conflict
+    -   id: check-executables-have-shebangs
+    -   id: check-merge-conflict
+    -   id: check-shebang-scripts-are-executable
+    -   id: check-symlinks
+    -   id: check-vcs-permalinks
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: mixed-line-ending
+    -   id: trailing-whitespace
+-   repo: https://github.com/fsfe/reuse-tool
+    rev: v0.13.0
+    hooks:
+    -   id: reuse
+-   repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.8.0.2
+    hooks:
+    -   id: shellcheck
