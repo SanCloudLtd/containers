@@ -1,34 +1,18 @@
 # Copyright (C) 2021 SanCloud Ltd
 # SPDX-License-Identifier: Apache-2.0
 
-name: CI
+name: Build images
 on:
   push:
     branches: ['dev', 'release']
     tags: ['v*']
+  schedule:
+    # Build at 00:10 on Mondays
+    - cron: '10 0 * * 1'
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup Python
-        uses: actions/setup-python@v2
-
-      - name: Run pre-commit checks
-        uses: pre-commit/action@v2.0.3
-
-      - name: Check Containerfiles
-        uses: hadolint/hadolint-action@v1.6.0
-        with:
-          dockerfile: Containerfile
-          recursive: true
-
   base-images:
     runs-on: ubuntu-latest
-    needs: lint
     strategy:
       matrix:
         include:
