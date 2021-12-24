@@ -3,9 +3,9 @@
 
 FROM docker.io/crops/yocto:ubuntu-20.04-base
 
-RUN wget https://bootstrap.pypa.io/get-pip.py && \
+RUN wget --progress=dot:mega https://bootstrap.pypa.io/get-pip.py && \
     python3 get-pip.py && \
     rm get-pip.py && \
-    python3 -m pip install kas && \
+    python3 -m pip install --no-cache-dir kas && \
     mkdir -p ~/.ssh && \
     echo 'StrictHostKeyChecking accept-new' >> ~/.ssh/config

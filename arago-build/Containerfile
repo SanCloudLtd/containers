@@ -4,9 +4,10 @@
 FROM ghcr.io/sancloudltd/poky-build:dev
 
 USER root
-RUN cd /opt && \
-    wget 'https://developer.arm.com/-/media/Files/downloads/gnu-a/9.2-2019.12/binrel/gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf.tar.xz?revision=fed31ee5-2ed7-40c8-9e0e-474299a3c4ac&hash=EA6FEBF1AF27143C49DF9FEE148AE3CC9EF4C064' -O gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf.tar.xz && \
-    tar xf gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf.tar.xz && \
-    rm -f gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf.tar.xz
+RUN wget --progress=dot:mega \
+        'https://developer.arm.com/-/media/Files/downloads/gnu-a/9.2-2019.12/binrel/gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf.tar.xz?revision=fed31ee5-2ed7-40c8-9e0e-474299a3c4ac&hash=EA6FEBF1AF27143C49DF9FEE148AE3CC9EF4C064' -O gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf.tar.xz \
+        -O toolchain.tar.xz && \
+    tar -C /opt xf toolchain.tar.xz && \
+    rm -f toolchain.tar.xz
 
 USER yoctouser
