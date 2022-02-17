@@ -10,4 +10,4 @@ RUN wget --progress=dot:mega \
     tar -C /opt -xf toolchain.tar.xz && \
     rm -f toolchain.tar.xz
 
-USER yoctouser
+USER usersetup
