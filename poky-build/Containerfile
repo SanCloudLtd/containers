@@ -1,7 +1,7 @@
 # Copyright (C) 2021 SanCloud Ltd
 # SPDX-License-Identifier: Apache-2.0
 
-FROM docker.io/crops/yocto:ubuntu-20.04-base
+FROM docker.io/crops/poky:ubuntu-20.04
 
 USER root
 RUN wget --progress=dot:mega https://bootstrap.pypa.io/get-pip.py && \
@@ -14,4 +14,4 @@ RUN wget --progress=dot:mega https://bootstrap.pypa.io/get-pip.py && \
         -O /usr/local/bin/repo && \
     chmod a+rx /usr/local/bin/repo
 
-USER yoctouser
+USER usersetup
