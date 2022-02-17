@@ -1,6 +1,6 @@
 # Copyright (C) 2021 SanCloud Ltd
 # SPDX-License-Identifier: Apache-2.0
 
-export PATH="/opt/armv7-eabihf--glibc--stable-2020.08-1/bin:$PATH"
+export PATH="/opt/toolchain/bin:$PATH"
 export ARCH=arm
 export CROSS_COMPILE=arm-linux-
