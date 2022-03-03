@@ -1,23 +1,19 @@
 <!--
-Copyright (C) 2021 SanCloud Ltd
+Copyright (C) 2021-2022 SanCloud Ltd
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # SanCloud Container Images
+
+[![Build images](https://github.com/SanCloudLtd/containers/actions/workflows/build.yml/badge.svg)](https://github.com/SanCloudLtd/containers/actions/workflows/build.yml)
+[![Lint](https://github.com/SanCloudLtd/containers/actions/workflows/lint.yml/badge.svg)](https://github.com/SanCloudLtd/containers/actions/workflows/lint.yml)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/SanCloudLtd/containers/dev.svg)](https://results.pre-commit.ci/latest/github/SanCloudLtd/containers/dev)
 
 This repository contains source files
 for building container images used by SanCloud.
 
 These images are made available
 in the hope that they are useful to others.
-
-In this repository,
-code files are distributed under the
-[Apache 2.0 License](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)),
-documentation files are distributed under the
-[CC BY 4.0 License](https://tldrlegal.com/license/creative-commons-attribution-4.0-international-(cc-by-4))
-and trivial data files are distributed under the
-[CC0 1.0 License](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal).
 
 ## Available images
 
@@ -81,7 +77,7 @@ required by the Arago distro.
 docker pull ghcr.io/sancloudltd/arago-build:dev
 ```
 
-## Contribution
+## Contributing
 
 [Pull requests](https://github.com/SanCloudLtd/containers/pulls)
 and [issue reports](https://github.com/SanCloudLtd/containers/issues)
@@ -89,3 +85,16 @@ are welcome for this repository.
 
 For further support enquiries
 please contact us via email to <yocto@sancloud.com>.
+
+## License
+
+Copyright (c) 2021-2022 SanCloud Ltd.
+
+* Code files are distributed under the
+  [Apache 2.0 License](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)).
+
+* Documentation files are distributed under the
+  [CC BY 4.0 License](https://tldrlegal.com/license/creative-commons-attribution-4.0-international-(cc-by-4)).
+
+* Trivial data files are distributed under the
+  [CC0 1.0 License](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal).
