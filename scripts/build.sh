@@ -18,4 +18,9 @@ cd "$1"
 if [[ -e prebuild.sh ]]; then
     ./prebuild.sh
 fi
-podman build -t "ghcr.io/sancloudltd/$1:dev" .
+
+if ! command -v podman &> /dev/null; then
+    podman build -t "ghcr.io/sancloudltd/$1:dev" .
+else
+    docker build -f Containerfile -t "ghcr.io/sancloudltd/$1:dev" .
+fi

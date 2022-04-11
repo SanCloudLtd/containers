@@ -5,5 +5,9 @@
 set -eo pipefail
 
 if [[ -z "$NOPULL" ]]; then
-    podman pull docker.io/library/ubuntu:20.04
+    if ! command -v podman &> /dev/null; then
+        podman pull docker.io/library/ubuntu:20.04
+    else
+        docker pull docker.io/library/ubuntu:20.04
+    fi
 fi

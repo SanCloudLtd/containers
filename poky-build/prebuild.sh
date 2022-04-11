@@ -5,5 +5,9 @@
 set -eo pipefail
 
 if [[ -z "$NOPULL" ]]; then
-    podman pull docker.io/crops/yocto:ubuntu-20.04-base
+    if ! command -v podman &> /dev/null; then
+        podman pull docker.io/crops/yocto:ubuntu-20.04-base
+    else
+        docker pull docker.io/crops/yocto:ubuntu-20.04-base
+    fi
 fi
