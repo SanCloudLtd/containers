@@ -8,6 +8,7 @@ RUN apt-get update && \
         build-essential cmake ninja-build mosquitto libmosquitto-dev \
         libjson-c-dev device-tree-compiler bison flex wget libssl-dev \
         libgmp3-dev libmpc-dev bc ca-certificates libncurses-dev \
-        u-boot-tools git clang-tidy cppcheck rsync zlib1g-dev && \
+        u-boot-tools git clang-tidy cppcheck rsync zlib1g-dev \
+        autoconf automake libtool file && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
