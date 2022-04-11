@@ -14,6 +14,7 @@ RUN wget --progress=dot:mega \
         "https://toolchains.bootlin.com/downloads/releases/toolchains/${TOOLCHAIN_ARCH}/tarballs/${TOOLCHAIN_FULLNAME}.tar.bz2" && \
     tar -C /opt -xf "${TOOLCHAIN_FULLNAME}.tar.bz2" && \
     rm -f "${TOOLCHAIN_FULLNAME}.tar.bz2" && \
-    ln -sfn "${TOOLCHAIN_FULLNAME}" /opt/toolchain
+    ln -sfn "${TOOLCHAIN_FULLNAME}" /opt/toolchain && \
+    /opt/toolchain/relocate-sdk.sh
 
 COPY setenv "/opt/toolchain/setenv"
